@@ -1,0 +1,211 @@
+data mining:	non trivial extraction of implicit, previously unknown and potentially useful infromation from large data set of databases
+
+clustering as preprocess:
+	summarization: for classification, regression, association
+
+	finding K nearest neighbor:
+		localising search
+	outlier detection
+
+consideration:
+	partition criteria: single vs hierarchical
+	separation: exclusive or non exclusive
+	similarity: distance vs connectivity
+	clustering: full space vs subspace
+
+iterative relocation tech: improve quality by moving 1 object from 1 cluster to another
+
+kmneas: applied to continous, sensitive to noisy and outlier
+
+hierarchical:
+	agglomerative(agnes)
+	divisive(diana)
+
+	uses dissimilaarity matrix and single link
+
+measuring quality:
+	extrinsic: supervised, recall and precision
+	intrinsic: unsupervised, silhoutter coefficient
+
+nbc adv: easy to implement, good result in most cases, fast to classify
+
+disadv: conditional independence -> inaccurate
+
+instance based:
+	knn
+	lazy learner
+	robust to noisy data
+	curse of dimensionality
+	slow
+
+if then classification:
+	may have conflicts, resolve:
+		size ordering
+		classbased ordering
+		rule based: make a priority list
+
+exlcusive: each instance will be under only 1 class
+exhaustive: there is rule for each combination of attributes
+
+rule based: LHS-> RHS
+	confition is conjunction
+
+linear models:
+	linear 
+	logistic
+	svm
+
+holdout: test train split
+	random sampling: variation of hold out: repeat hold out k times (with random sampling)
+
+cross validation:
+	k fold
+	leave one out
+	stratified sampling
+
+bootstrap:
+	for small data set
+	random sampling
+	0.632 
+
+overcome imbalance:
+	oversampling: increase tuple
+	undersamping: reduce tuples
+	threshold: move threshold to account for class
+	ensemble
+
+data mining task: specified in form of data mining query-> input dm system
+
+dm query: in terms of dm task primitives, allow interactive communication.
+
+dm task primitives:
+	task relevant data
+		db to look, tables to look, relevant attributes, data grouping
+	kind of knowledge
+		clustering, classification, regression
+	background knowledge
+		concept hierarchy:
+			schema
+			set grouping
+			operation driven
+			rule based
+	interstingness measure:
+		simplicity
+		certainity
+		novelty
+		utility
+	representation for visualising
+		pixel oeriented
+		geometric projection
+		icon based
+		hierarchy
+
+
+dm query lang is designed for this
+
+pattern interstingness:
+	certainilty, novelity, useful, accurate
+	interesting pattern -> knowledge
+	measure:
+		objective:
+			confidence, support
+		subjective:
+			user's belief, unexpectedness, novelty, actionability
+
+	simplicity: rule length, tree size
+	certainity: confidence, accuracy, rule strength
+	utility: usefullness, support, noise threshold
+	novelty: surprising
+
+principal of attribute oriented induction:
+	data focusing
+	attribute removal
+	attribute generalisation
+	atttrbite threshold control
+	generalised relation threshold control
+
+presentation of generalised results:
+	relation
+	cross tabulation nd visualisation
+	quantitative characteristic rule
+
+handle redundancy:
+	because of integration from dbs
+	same obj/attr may have diff name in diff db
+	1 attr maybe derivable
+
+	can handle by correlation/covariance analaysis 
+	careful integration
+
+
+cluster vs association => attribute vs appearance
+
+frequent pattern: pattern/itemset taht occurs frequently
+
+X is closed if X is frequent and no Y exist such that Y is superset of X and has same support as X
+
+X is max pattern is X is frequenct and no frequenct Y superset of X 
+
+downward closure property:
+	if X is frequent then subset of X is frequent
+
+scalable mining methods:
+	apriori: bfs
+	freq pattern growth: dfs
+	vertical data format
+
+handle:
+	missing values:
+		ignore
+		manual
+		global const
+		central tendancy
+		mean/median belonging to same class
+		most probable value
+
+	noisy:
+		binning
+		regression
+		outlier analysis -> clustering
+
+	data transformation starategy:
+		smoothing
+		attribute construction
+		aggregation
+		normalisation
+		discretisation:
+			binning
+			histogram analysis
+			cluster
+			DT
+		concept hierarchy
+
+critique of atribute category:
+	incomplete:
+		assymetric
+		cyclical
+		mutlivariate
+		partailly ordered
+		partial memebership
+		relationship bw data
+
+characteristics of data
+	dimensionality: no. of challenges
+	sparsity: presence
+	resolution: scale of data
+	size of data
+
+type of data:
+	record:
+		data matrix
+		document data
+		transaction data
+	graph:
+		www
+		molecular structure
+	ordered:
+		spatial
+		temporal
+		sequential
+		genetic sequence
+
